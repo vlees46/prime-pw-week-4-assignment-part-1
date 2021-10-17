@@ -56,15 +56,33 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast( array ) {
+  if (array.length === 0) {
+     console.log("Array is empty!", array)
+  } 
+  else {
+    return array[array.length -1];
 
+  }  
 }
+console.log('last value in array is', getLast(5));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+
 function find( value, array ){
-  
+
+  console.log(value, array );
+
+  for (let i=0; i < array.length; i++){
+  if( array[i] === value ){
+    return true;
+  }
+    return false; 
+  }
 }
+  console.log('The value is not found', find(5, [15]));
+  console.log('The value is found', find(5, [5]));
 
 // ----------------------
 // Stretch Goals
@@ -72,7 +90,13 @@ function find( value, array ){
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
+   if (letter === string.charAt(0)){
+     return true;
 
+   }
+   else {
+     return false;
+   }
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
@@ -92,4 +116,4 @@ function sumAll( ) {
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
-//     here in a comment, write the function, and test it!
+//     here in a comment, write the function, and test it
